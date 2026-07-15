@@ -1,0 +1,415 @@
+/* --- GLOBAL STYLES & RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #690909; /* Warna merah marun premium sesuai request */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 1. HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+    background: radial-gradient(circle at 80% 20%, #871313 0%, #690909 60%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffb4b4;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-text h1 {
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #e5c5c5;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Call to Action Box */
+.cta-box {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 450px;
+}
+
+.cta-item {
+    margin-bottom: 20px;
+}
+
+.cta-item:last-child {
+    margin-bottom: 0;
+}
+
+.cta-item p {
+    font-size: 14px;
+    color: #ffb4b4;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-wa {
+    background-color: #25D366;
+}
+
+.btn-ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Efek Animasi Gambar iPhone Melayang */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.floating-img {
+    max-width: 320px;
+    height: auto;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
+    animation: floatAnimation 5s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* --- 2. PRODUCT SECTION --- */
+.products {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 100px 0;
+}
+
+.products h2, .reviews h2 {
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #f8f9fa;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.tag-second { background-color: #e1f5fe; color: #0288d1; }
+.tag-new { background-color: #e8f5e9; color: #388e3c; }
+
+.prod-img-placeholder {
+    background-color: #eef0f2;
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #b5bfc9;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 16px;
+    color: #690909;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    display: block;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #690909;
+}
+
+/* --- 3. TESTIMONI SECTION (Ala Google Maps) --- */
+.reviews {
+    background-color: #f4f5f6;
+    color: #1a1a1a;
+    padding: 100px 0;
+    border-top: 1px solid #eaeaea;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e6;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #690909;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.review-header h4 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.stars {
+    color: #fbbc05;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.review-photo-placeholder {
+    background-color: #eef0f2;
+    height: 160px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-size: 14px;
+    gap: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+/* --- 4. FOOTER / LOKASI --- */
+footer {
+    background-color: #1a0202;
+    padding: 60px 0;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-info {
+    max-width: 500px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.footer-info p {
+    color: #c5a9a9;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-info i {
+    color: #ffb4b4;
+}
+
+.footer-copy {
+    align-self: flex-end;
+    color: #8c7373;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE LAYOUT (MOBILE OPTIMIZATION) --- */
+@media (max-width: 968px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    
+    .cta-box {
+        margin: 0 auto;
+    }
+    
+    .hero-image {
+        margin-top: 20px;
+    }
+    
+    .floating-img {
+        max-width: 240px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-copy {
+        align-self: center;
+        margin-top: 20px;
+    }
+}
+.logo-toko {
+    max-width: 140px; /* Ini akan mengecilkan logo kamu menjadi proporsional */
+    height: auto;
+    display: inline-block;
+    margin-bottom: 15px; /* Memberi sedikit jarak ke teks di bawahnya */
+}
+.prod-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Biar foto tidak gepeng atau terpotong */
+    background-color: #eef0f2; /* Tetap mempertahankan background abu-abu yang rapi */
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: block;
+}
+
