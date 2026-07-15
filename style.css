@@ -6,17 +6,18 @@
 }
 
 body {
-    background-color: #690909; /* Warna merah marun premium sesuai request */
+    background-color: #690909; /* Warna merah marun premium */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-.container {
+.container, .hero-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* --- 1. HERO SECTION --- */
@@ -34,12 +35,19 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 50px;
+    gap: 40px;
 }
 
 .hero-text {
     flex: 1;
     max-width: 600px;
+}
+
+.logo-toko {
+    max-width: 140px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 .badge {
@@ -137,15 +145,9 @@ body {
 }
 
 @keyframes floatAnimation {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(3deg);
-    }
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
 
 /* --- 2. PRODUCT SECTION --- */
@@ -174,6 +176,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    justify-content: center;
+    justify-items: center; /* Memastikan produk di baris terakhir otomatis di tengah desktop */
 }
 
 .product-card {
@@ -183,6 +187,8 @@ body {
     padding: 24px;
     position: relative;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 340px;
 }
 
 .product-card:hover {
@@ -199,21 +205,20 @@ body {
     padding: 4px 10px;
     border-radius: 6px;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 .tag-second { background-color: #e1f5fe; color: #0288d1; }
 .tag-new { background-color: #e8f5e9; color: #388e3c; }
 
-.prod-img-placeholder {
-    background-color: #eef0f2;
+.prod-img {
+    width: 100%;
     height: 220px;
+    object-fit: contain;
+    background-color: #eef0f2;
     border-radius: 12px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    color: #b5bfc9;
+    display: block;
 }
 
 .product-card h3 {
@@ -305,17 +310,19 @@ body {
     line-height: 1.5;
 }
 
-.review-photo-placeholder {
-    background-color: #eef0f2;
-    height: 160px;
+.review-photo {
+    margin-top: 15px;
+    width: 100%;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7f8c8d;
-    font-size: 14px;
-    gap: 8px;
-    border: 1px dashed #cbd5e1;
+    overflow: hidden;
+}
+
+.review-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 250px;
 }
 
 /* --- 4. FOOTER / LOKASI --- */
@@ -326,38 +333,96 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.footer-content {
+footer .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 20px;
 }
 
-.footer-info {
+footer .footer-info {
+    width: 100%;
     max-width: 500px;
+    margin: 0 auto;
 }
 
-.footer-info h3 {
+footer .footer-info h3 {
     margin-bottom: 20px;
     font-size: 24px;
     letter-spacing: 0.5px;
 }
 
-.footer-info p {
+footer .footer-info p {
     color: #c5a9a9;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
-.footer-info i {
-    color: #ffb4b4;
+/* Desain Kotak Alamat Premium */
+.address-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 450px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.address-icon {
+    font-size: 24px;
+    color: #ff3b30;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 59, 48, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.address-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.address-text strong {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.address-text span {
+    color: #cccccc;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+
+.map-container iframe {
+    width: 100% !important;
+    border-radius: 8px;
 }
 
 .footer-copy {
-    align-self: flex-end;
+    margin-top: 20px;
     color: #8c7373;
     font-size: 14px;
 }
@@ -385,117 +450,5 @@ footer {
     .floating-img {
         max-width: 240px;
     }
-    
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
     }
     
-    .footer-copy {
-        align-self: center;
-        margin-top: 20px;
-    }
-}
-.logo-toko {
-    max-width: 140px; /* Ini akan mengecilkan logo kamu menjadi proporsional */
-    height: auto;
-    display: inline-block;
-    margin-bottom: 15px; /* Memberi sedikit jarak ke teks di bawahnya */
-}
-.prod-img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain; /* Biar foto tidak gepeng atau terpotong */
-    background-color: #eef0f2; /* Tetap mempertahankan background abu-abu yang rapi */
-    border-radius: 12px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* Menjinakkan ukuran foto bukti pembeli */
-.review-photo {
-    margin-top: 15px;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.review-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    max-height: 250px; /* Membatasi tinggi foto agar tidak terlalu panjang kebawah */
-}
-/* Merapikan susunan footer dan peta lokasi */
-footer .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-footer .footer-info {
-    width: 100%;
-    max-width: 500px; /* Membatasi lebar teks agar rapi di HP */
-    margin: 0 auto;
-}
-
-.map-container {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px auto 0 auto;
-}
-
-.map-container iframe {
-    width: 100% !important;
-    border-radius: 8px;
-}
-/* Desain Kotak Alamat yang Lebih Bagus */
-.address-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05); /* Latar belakang transparan tipis */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi halus */
-    padding: 15px;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 450px;
-    text-align: left; /* Teks alamat rata kiri di dalam kotak agar rapi */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.address-icon {
-    font-size: 24px;
-    color: #ff3b30; /* Warna merah khas Apple/Samsung premium */
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 59, 48, 0.1); /* Lingkaran merah transparan di belakang ikon */
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    flex-shrink: 0; /* Mencegah ikon gepeng di layar HP */
-}
-
-.address-text {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.address-text strong {
-    color: #ffffff;
-    font-size: 15px;
-    margin-bottom: 3px;
-}
-
-.address-text span {
-    color: #cccccc;
-}
