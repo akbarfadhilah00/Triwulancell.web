@@ -45,6 +45,39 @@
             <div class="hero-image">
                 <img src="iphone-17-float.png" alt="iPhone Floating" class="floating-img">
             </div>
+
+            <!-- Teks Berjalan Keren: Langsung Penuh 1 Baris Sejak Awal -->
+<div style="width: 100%; overflow: hidden; background: transparent; padding: 14px 0; white-space: nowrap; display: flex; position: relative;">
+    
+    <!-- Bagian CSS Animasi Khusus (Langsung Ditempel di Sini Agar Aman) -->
+    <style>
+        @keyframes jalanTerus {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-33.33%, 0, 0); }
+        }
+        .konten-berjalan {
+            display: flex;
+            white-space: nowrap;
+            animation: jalanTerus 25s linear infinite;
+        }
+        .konten-berjalan span {
+            font-size: 18px; 
+            font-weight: 800; 
+            color: #ffffff; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            padding-right: 10px;
+        }
+    </style>
+
+    <!-- Konten Teks yang Langsung Memenuhi Layar -->
+    <div class="konten-berjalan">
+        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+    </div>
+
+</div>
             
         </div>
     </header>
