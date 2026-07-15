@@ -12,10 +12,35 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="#beranda" class="nav-brand">
+                <img src="logo_triwulancell.png" alt="Logo Triwulancell" onerror="this.style.display='none'">
+                TRIWULANCELL
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                <li><a href="#produk" class="nav-link">Produk</a></li>
+                <li><a href="#ulasan" class="nav-link">Ulasan</a></li>
+                <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+                <li>
+                    <a href="https://wa.me/628119804789?text=Halo%20Triwulancell,%20saya%20mau%20tanya%20stok" target="_blank" class="nav-cta nav-cta-mobile">
+                        <i class="fab fa-whatsapp"></i> Chat Kami
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- 1. HERO SECTION -->
-    <header class="hero">
-        <div class="hero-container">
-            
+    <header class="hero" id="beranda">
+        
+        <div class="container hero-container">
             <!-- SISI KIRI: Teks & Tombol -->
             <div class="hero-text">
                 <img src="logo_triwulancell.png" alt="Logo Triwulancell" class="logo-toko">
@@ -23,7 +48,7 @@
                     <span class="badge">Premium Gadget Store</span>
                 </div>
                 <h1>TRIWULANCELL</h1>
-                <p>Menjual dan membeli smartphone baru & bekas berkualitas mulai dari iPhone hingga Samsung dengan harga bersahabat.</p>
+                <p>Menjual dan membeli smartphone new & second berkualitas mulai dari Apple hingga android dengan harga bersahabat.</p>
                 
                 <div class="cta-box">
                     <div class="cta-item">
@@ -38,6 +63,18 @@
                             <i class="fab fa-instagram"></i> Kunjungi Instagram
                         </a>
                     </div>
+                    <div class="cta-item">
+                        <p>Belanja aman di Tokopedia?</p>
+                        <a href="https://tk.tokopedia.com/ZSXSLdsmp/" target="_blank" class="btn btn-tokopedia">
+                            <img src="Tokopedialogo.png" alt="Tokopedia" class="img-icon-tokopedia"> Kunjungi Tokopedia
+                        </a>
+                    </div>
+                    <div class="cta-item">
+                        <p>Belanja seru di Shopee?</p>
+                        <a href="https://id.shp.ee/8EQQs5eo" target="_blank" class="btn btn-shopee">
+                            <img src="shopeelogo.png" alt="Shopee" class="img-icon-shopee"> Kunjungi Shopee
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -45,44 +82,21 @@
             <div class="hero-image">
                 <img src="iphone-17-float.png" alt="iPhone Floating" class="floating-img">
             </div>
-
-            <!-- Teks Berjalan Keren: Langsung Penuh 1 Baris Sejak Awal -->
-            <div style="width: 100%; overflow: hidden; background: transparent; padding: 14px 0; white-space: nowrap; display: flex; position: relative;">
-                
-                <!-- Bagian CSS Animasi Khusus (Langsung Ditempel di Sini Agar Aman) -->
-                <style>
-                    @keyframes jalanTerus {
-                        0% { transform: translate3d(0, 0, 0); }
-                        100% { transform: translate3d(-33.33%, 0, 0); }
-                    }
-                    .konten-berjalan {
-                        display: flex;
-                        white-space: nowrap;
-                        animation: jalanTerus 25s linear infinite;
-                    }
-                    .konten-berjalan span {
-                        font-size: 18px; 
-                        font-weight: 800; 
-                        color: #ffffff; 
-                        letter-spacing: 2px; 
-                        text-transform: uppercase;
-                        padding-right: 10px;
-                    }
-                </style>
-
-                <!-- Konten Teks yang Langsung Memenuhi Layar -->
-                <div class="konten-berjalan">
-                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-                </div>
-            </div>
-            
         </div>
+
+        <!-- Teks Berjalan Keren: Keluar dari Container namun tetap di dalam Header -->
+        <div class="hero-marquee">
+            <div class="konten-berjalan">
+                <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+                <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+                <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+            </div>
+        </div>
+
     </header>
 
     <!-- 2. PRODUCT SECTION (Dengan Background Video 50% Opacity) -->
-    <section class="products" style="position: relative; overflow: hidden; padding: 60px 0;">
+    <section class="products" id="produk" style="position: relative; overflow: hidden; padding: 60px 0;">
         
         <!-- Video Latar Belakang iPhone -->
         <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; pointer-events: none;">
@@ -94,73 +108,142 @@
         <div class="container" style="position: relative; z-index: 2;">
             <h2>Katalog Produk Ready</h2>
             <p class="section-subtitle">Stok terbaru, orisinal, dan bergaransi toko</p>
+
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="iphone">iPhone</button>
+                <button class="filter-btn" data-filter="samsung">Samsung</button>
+                <button class="filter-btn" data-filter="lainnya">Lainnya</button>
+            </div>
             
             <div class="product-grid">
                 <!-- Produk 1 -->
-                <div class="product-card">
+                <div class="product-card reveal" data-category="iphone">
                     <span class="tag tag-second">Second Mulus</span>
                     <div class="prod-img-container">
-                        <img src="iphone13.png" alt="iPhone 13" class="prod-img">
+                        <img src="iphone13.png" alt="iPhone 13" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
                     </div>
                     <h3>iPhone 13</h3>
                     <p class="price">Harga Bersahabat</p>
                     <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2013%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card reveal" data-category="iphone">
                     <span class="tag tag-second">Second Mulus</span>
                     <div class="prod-img-container">
-                        <img src="iphone14.png" alt="iPhone 14" class="prod-img">
+                        <img src="iphone14.png" alt="iPhone 14" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
                     </div>
                     <h3>iPhone 14</h3>
                     <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2015%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2014%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
                 </div>
 
                 <!-- Produk 2 -->
-                <div class="product-card">
+                <div class="product-card reveal" data-category="iphone">
                     <span class="tag tag-second">Second Mulus</span>
                     <div class="prod-img-container">
-                        <img src="iphone15.png" alt="iPhone 15" class="prod-img">
+                        <img src="iphone15.png" alt="iPhone 15" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
                     </div>
                     <h3>iPhone 15</h3>
                     <p class="price">Harga Bersahabat</p>
                     <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2015%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
                 </div>
 
-                <div class="product-card">
-                    <span class="tag tag-second">Second Mulus</span>
+                <div class="product-card reveal" data-category="iphone">
+                    <span class="tag tag-new">Baru</span>
                     <div class="prod-img-container">
-                        <img src="iphone16.png" alt="iPhone 16" class="prod-img">
+                        <img src="iphone16.png" alt="iPhone 16" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
                     </div>
                     <h3>iPhone 16</h3>
                     <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2015%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2016%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
                 </div>
 
-                <!-- Produk 3 -->
-                <div class="product-card">
-                    <span class="tag tag-new">Baru / New</span>
+                <!-- Produk Tambahan: iPhone -->
+                <div class="product-card reveal" data-category="iphone">
+                    <span class="tag tag-second">Second Mulus</span>
                     <div class="prod-img-container">
-                        <img src="iphone17.png" alt="iPhone 17" class="prod-img">
+                        <img src="iphone12.png" alt="iPhone 12" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
                     </div>
-                    <h3>iPhone 17</h3>
+                    <h3>iPhone 12</h3>
                     <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2017%20new%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2012%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <div class="product-card reveal" data-category="iphone">
+                    <span class="tag tag-second">Second Mulus</span>
+                    <div class="prod-img-container">
+                        <img src="iphone-se.png" alt="iPhone SE" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
+                    </div>
+                    <h3>iPhone SE</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%20SE%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <!-- Produk Tambahan: Samsung -->
+                <div class="product-card reveal" data-category="samsung">
+                    <span class="tag tag-new">Baru</span>
+                    <div class="prod-img-container">
+                        <img src="samsung-s24-ultra.png" alt="Samsung Galaxy S24 Ultra" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
+                    </div>
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20S24%20Ultra%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <div class="product-card reveal" data-category="samsung">
+                    <span class="tag tag-second">Second Mulus</span>
+                    <div class="prod-img-container">
+                        <img src="samsung-s23.png" alt="Samsung Galaxy S23" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
+                    </div>
+                    <h3>Samsung Galaxy S23</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20S23%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <div class="product-card reveal" data-category="samsung">
+                    <span class="tag tag-second">Second Mulus</span>
+                    <div class="prod-img-container">
+                        <img src="samsung-z-flip5.png" alt="Samsung Galaxy Z Flip5" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
+                    </div>
+                    <h3>Samsung Galaxy Z Flip5</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20Z%20Flip5%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <div class="product-card reveal" data-category="samsung">
+                    <span class="tag tag-second">Second Mulus</span>
+                    <div class="prod-img-container">
+                        <img src="samsung-a54.png" alt="Samsung Galaxy A54" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
+                    </div>
+                    <h3>Samsung Galaxy A54</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20A54%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
+                </div>
+
+                <!-- Produk Tambahan: Lainnya -->
+                <div class="product-card reveal" data-category="lainnya">
+                    <span class="tag tag-second">Second Mulus</span>
+                    <div class="prod-img-container">
+                        <img src="ipad-air.png" alt="iPad Air" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-tablet-screen-button\'></i>'}))">
+                    </div>
+                    <h3>iPad Air</h3>
+                    <p class="price">Harga Bersahabat</p>
+                    <a href="https://wa.me/628119804789?text=Halo,%20iPad%20Air%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- 3. TESTIMONI SECTION (Ala Google Maps) -->
-    <section class="reviews">
+    <section class="reviews" id="ulasan">
         <div class="container">
             <h2>Ulasan Pembeli</h2>
             <p class="section-subtitle">Apa kata mereka yang sudah bertransaksi di TRIWULANCELL</p>
             
             <div class="review-grid">
                 <!-- Review 1 -->
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-header">
                         <div class="avatar">N</div>
                         <div>
@@ -175,7 +258,7 @@
                 </div>
 
                 <!-- Review 2 -->
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-header">
                         <div class="avatar">M</div>
                         <div>
@@ -190,7 +273,7 @@
                 </div>
 
                 <!-- Testimoni Dian safitri Prudential -->
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-header">
                         <div class="avatar">D</div>
                         <div>
@@ -204,7 +287,7 @@
                 </div>
 
                 <!-- Testimoni valy aryun -->
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-header">
                         <div class="avatar">V</div>
                         <div>
@@ -221,7 +304,7 @@
     </section>
 
     <!-- 4. FOOTER / LOKASI -->
-    <footer>
+    <footer id="lokasi">
         <div class="container footer-content">
             <div class="footer-info">
                 <h3>TRIWULANCELL</h3>
@@ -256,6 +339,99 @@
             </div>
         </div>
     </footer>
+
+    <!-- Tombol Kembali ke Atas -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // --- Navbar: efek scroll & menu mobile ---
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        const backToTop = document.getElementById('backToTop');
+
+        function closeMobileNav() {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+            navOverlay.classList.remove('open');
+        }
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('open');
+        });
+
+        navOverlay.addEventListener('click', closeMobileNav);
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Highlight menu aktif sesuai posisi scroll ---
+        const sections = ['beranda', 'produk', 'ulasan', 'lokasi']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+        const navAnchors = document.querySelectorAll('.nav-link');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navAnchors.forEach(a => a.classList.remove('active'));
+                    const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(sec => sectionObserver.observe(sec));
+
+        // --- Reveal animasi saat scroll ---
+        const revealItems = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+
+        // --- Filter produk (Semua / iPhone / Samsung / Lainnya) ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                productCards.forEach(card => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    card.classList.toggle('hidden-item', !match);
+                    if (match) {
+                        card.classList.add('reveal', 'in-view');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
