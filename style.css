@@ -413,3 +413,89 @@ footer {
     display: block;
 }
 
+/* Menjinakkan ukuran foto bukti pembeli */
+.review-photo {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.review-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 250px; /* Membatasi tinggi foto agar tidak terlalu panjang kebawah */
+}
+/* Merapikan susunan footer dan peta lokasi */
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer-info {
+    width: 100%;
+    max-width: 500px; /* Membatasi lebar teks agar rapi di HP */
+    margin: 0 auto;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+
+.map-container iframe {
+    width: 100% !important;
+    border-radius: 8px;
+}
+/* Desain Kotak Alamat yang Lebih Bagus */
+.address-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Latar belakang transparan tipis */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi halus */
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 450px;
+    text-align: left; /* Teks alamat rata kiri di dalam kotak agar rapi */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.address-icon {
+    font-size: 24px;
+    color: #ff3b30; /* Warna merah khas Apple/Samsung premium */
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 59, 48, 0.1); /* Lingkaran merah transparan di belakang ikon */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    flex-shrink: 0; /* Mencegah ikon gepeng di layar HP */
+}
+
+.address-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.address-text strong {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.address-text span {
+    color: #cccccc;
+}
