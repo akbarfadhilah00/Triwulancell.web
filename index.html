@@ -47,44 +47,51 @@
             </div>
 
             <!-- Teks Berjalan Keren: Langsung Penuh 1 Baris Sejak Awal -->
-<div style="width: 100%; overflow: hidden; background: transparent; padding: 14px 0; white-space: nowrap; display: flex; position: relative;">
-    
-    <!-- Bagian CSS Animasi Khusus (Langsung Ditempel di Sini Agar Aman) -->
-    <style>
-        @keyframes jalanTerus {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-33.33%, 0, 0); }
-        }
-        .konten-berjalan {
-            display: flex;
-            white-space: nowrap;
-            animation: jalanTerus 25s linear infinite;
-        }
-        .konten-berjalan span {
-            font-size: 18px; 
-            font-weight: 800; 
-            color: #ffffff; 
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-            padding-right: 10px;
-        }
-    </style>
+            <div style="width: 100%; overflow: hidden; background: transparent; padding: 14px 0; white-space: nowrap; display: flex; position: relative;">
+                
+                <!-- Bagian CSS Animasi Khusus (Langsung Ditempel di Sini Agar Aman) -->
+                <style>
+                    @keyframes jalanTerus {
+                        0% { transform: translate3d(0, 0, 0); }
+                        100% { transform: translate3d(-33.33%, 0, 0); }
+                    }
+                    .konten-berjalan {
+                        display: flex;
+                        white-space: nowrap;
+                        animation: jalanTerus 25s linear infinite;
+                    }
+                    .konten-berjalan span {
+                        font-size: 18px; 
+                        font-weight: 800; 
+                        color: #ffffff; 
+                        letter-spacing: 2px; 
+                        text-transform: uppercase;
+                        padding-right: 10px;
+                    }
+                </style>
 
-    <!-- Konten Teks yang Langsung Memenuhi Layar -->
-    <div class="konten-berjalan">
-        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-        <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
-    </div>
-
-</div>
+                <!-- Konten Teks yang Langsung Memenuhi Layar -->
+                <div class="konten-berjalan">
+                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+                    <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
+                </div>
+            </div>
             
         </div>
     </header>
 
-    <!-- 2. PRODUCT SECTION -->
-    <section class="products">
-        <div class="container">
+    <!-- 2. PRODUCT SECTION (Dengan Background Video 50% Opacity) -->
+    <section class="products" style="position: relative; overflow: hidden; padding: 60px 0;">
+        
+        <!-- Video Latar Belakang iPhone -->
+        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; pointer-events: none;">
+            <source src="iphonevideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Konten Katalog (Dibungkus Container dengan z-index tinggi agar di atas video) -->
+        <div class="container" style="position: relative; z-index: 2;">
             <h2>Katalog Produk Ready</h2>
             <p class="section-subtitle">Stok terbaru, orisinal, dan bergaransi toko</p>
             
@@ -181,33 +188,34 @@
                         <img src="pembeli2.jpg" alt="Foto Bukti Pembeli 2" class="review-img">
                     </div>
                 </div>
-                <!-- Testimoni Dian safitri Prudential -->
-<div class="review-card">
-    <div class="review-header">
-        <div class="avatar">D</div>
-        <div>
-            <h4>Dian safitri Prudential</h4>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-        </div>
-    </div>
-    <p class="review-text">
-        Langganan udh 7 tahun, terpercaya, barangnya bagus staffnya ramah pelayanannya 👍 Jangan ragu untuk berbelanja di triwulan cell
-    </p>
-</div>
 
-<!-- Testimoni valy aryun -->
-<div class="review-card">
-    <div class="review-header">
-        <div class="avatar">V</div>
-        <div>
-            <h4>valy aryun</h4>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-        </div>
-    </div>
-    <p class="review-text">
-        semua tim ramah dan sigap membantu costumer. sukses berkah selalu
-    </p>
-</div>
+                <!-- Testimoni Dian safitri Prudential -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">D</div>
+                        <div>
+                            <h4>Dian safitri Prudential</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Langganan udh 7 tahun, terpercaya, barangnya bagus staffnya ramah pelayanannya 👍 Jangan ragu untuk berbelanja di triwulan cell
+                    </p>
+                </div>
+
+                <!-- Testimoni valy aryun -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">V</div>
+                        <div>
+                            <h4>valy aryun</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        semua tim ramah dan sigap membantu costumer. sukses berkah selalu
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -231,16 +239,84 @@
                 </div>
 
                 <!-- Google Maps Embed yang Terhubung Langsung ke Link Resmi Toko -->
-<div class="map-container">
-    <a href="https://maps.app.goo.gl/wkVTx8rZU2FrP7L99" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; text-decoration: none;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0270081393693!2d106.799348!3d-6.264240!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1a272dfc9d7%3A0x63364f9b8832a849!2sTriwulan%20Cell!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" width="100%" height="250" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div style="text-align: center; margin-top: 10px;">
-            <span style="color: #ff3b30; font-size: 14px; font-weight: 600; text-decoration: underline;">
-                Klik di sini untuk buka di Aplikasi Google Maps
-            </span>
+                <div class="map-container">
+                    <a href="https://maps.app.goo.gl/wkVTx8rZU2FrP7L99" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; text-decoration: none;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0270081393693!2d106.799348!3d-6.264240!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1a272dfc9d7%3A0x63364f9b8832a849!2sTriwulan%20Cell!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" width="100%" height="250" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div style="text-align: center; margin-top: 10px;">
+                            <span style="color: #ff3b30; font-size: 14px; font-weight: 600; text-decoration: underline;">
+                                Klik di sini untuk buka di Aplikasi Google Maps
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 TRIWULANCELL. All Rights Reserved.
+            </div>
         </div>
-    </a>
-</div>
+    </footer>
+
+</body>
+</html>
+                    <div class="review-header">
+                        <div class="avatar">D</div>
+                        <div>
+                            <h4>Dian safitri Prudential</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Langganan udh 7 tahun, terpercaya, barangnya bagus staffnya ramah pelayanannya 👍 Jangan ragu untuk berbelanja di triwulan cell
+                    </p>
+                </div>
+
+                <!-- Testimoni valy aryun -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">V</div>
+                        <div>
+                            <h4>valy aryun</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        semua tim ramah dan sigap membantu costumer. sukses berkah selalu
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FOOTER / LOKASI -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>TRIWULANCELL</h3>
+                <p><i class="fas fa-clock"></i> Buka Setiap Hari: 11.00 - 21.00 WIB</p>
+                
+                <!-- Kotak Alamat Premium -->
+                <div class="address-box">
+                    <div class="address-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="address-text">
+                        <strong>Lokasi Toko Offline</strong>
+                        <span>ITC Fatmawati lobby 2 lt. dasar no 48</span>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed yang Terhubung Langsung ke Link Resmi Toko -->
+                <div class="map-container">
+                    <a href="https://maps.app.goo.gl/wkVTx8rZU2FrP7L99" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; text-decoration: none;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0270081393693!2d106.799348!3d-6.264240!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1a272dfc9d7%3A0x63364f9b8832a849!2sTriwulan%20Cell!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" width="100%" height="250" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div style="text-align: center; margin-top: 10px;">
+                            <span style="color: #ff3b30; font-size: 14px; font-weight: 600; text-decoration: underline;">
+                                Klik di sini untuk buka di Aplikasi Google Maps
+                            </span>
+                        </div>
+                    </a>
+                </div>
 
             </div>
             <div class="footer-copy">
