@@ -13,38 +13,40 @@ body {
     overflow-x: hidden;
 }
 
-.container, .hero-container {
+.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- 1. HERO SECTION --- */
+/* --- 1. HERO SECTION (SUDAH DIPERBAIKI TOTAL AGAR DI TENGAH DESKTOP) --- */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center; /* Memastikan isi terpusat di tengah layar desktop */
     padding: 80px 0;
     position: relative;
-    background: radial-gradient(circle at 80% 20%, #871313 0%, #690909 60%);
-    width: 100%
+    background: radial-gradient(circle at 50% 50%, #871313 0%, #690909 70%); /* Gradasi seimbang di tengah */
+    width: 100%;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
+    justify-content: center; /* Mengumpulkan teks dan gambar tepat di tengah */
+    width: 100%;
+    max-width: 1100px; /* Batasi agar konten tidak jebol ke pinggir monitor lebar */
     margin: 0 auto;
-    gap: 50px;
+    gap: 80px; /* Jarak ideal dan manis antara teks dan gambar */
+    padding: 0 40px;
     box-sizing: border-box;
 }
 
 .hero-text {
     flex: 1;
-    max-width: 500px; /* Membatasi lebar teks agar tidak melar ke kiri */
+    max-width: 480px; /* Lebar teks tertata rapi */
     width: 100%;
     text-align: left;
 }
@@ -78,9 +80,9 @@ body {
 }
 
 .hero-text p {
-    font-size: 18px;
+    font-size: 16px;
     color: #e5c5c5;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     font-weight: 300;
 }
 
@@ -91,7 +93,7 @@ body {
     border-radius: 16px;
     padding: 24px;
     max-width: 450px;
-    width: 100%
+    width: 100%;
 }
 
 .cta-item {
@@ -141,10 +143,13 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 400px;
     position: relative;
 }
 
 .floating-img {
+    width: 100%;
     max-width: 320px;
     height: auto;
     filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
@@ -440,6 +445,12 @@ footer .footer-info p {
         flex-direction: column;
         text-align: center;
         padding-top: 40px;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .hero-text {
+        text-align: center;
     }
     
     .hero-text h1 {
@@ -457,5 +468,4 @@ footer .footer-info p {
     .floating-img {
         max-width: 240px;
     }
-    }
-    
+}
