@@ -20,13 +20,13 @@ body {
     padding: 0 20px;
 }
 
-/* --- 1. HERO SECTION (ADAPTIF DESKTOP & MOBILE) --- */
+/* --- 1. HERO SECTION (FIXED: PERMANEN DI TENGAH & IPHONE DI BAWAH) --- */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 0;
+    padding: 60px 0;
     position: relative;
     background: radial-gradient(circle at 50% 50%, #871313 0%, #690909 70%); /* Gradasi seimbang di tengah */
     width: 100%;
@@ -34,24 +34,28 @@ body {
 
 .hero-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Menyebarkan teks di kiri & gambar di kanan saat desktop */
-    width: 90%;
-    max-width: 1100px; /* Batasi agar konten tidak melar ke ujung monitor lebar */
+    flex-direction: column; /* MEMAKSA STRUKTUR ATAS-BAWAH DI SEMUA LAYAR */
+    align-items: center; /* MEMBUAT SEMUA KONTEN PAS DI TENGAH */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Batasi lebar agar konten tetap fokus dan tidak melar ke samping */
     margin: 0 auto;
-    gap: 50px; /* Jarak pas antara teks dan gambar */
+    gap: 40px; /* Jarak manis antara teks atas dan gambar di bawahnya */
+    padding: 0 20px;
     box-sizing: border-box;
+    text-align: center; /* Otomatis menengahkan teks */
 }
 
 .hero-text {
-    flex: 1;
-    max-width: 500px; /* Lebar maksimal teks desktop */
     width: 100%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menengahkan logo, badge, dan kotak CTA */
+    text-align: center;
 }
 
 .logo-toko {
-    max-width: 140px;
+    max-width: 130px;
     height: auto;
     display: inline-block;
     margin-bottom: 15px;
@@ -65,24 +69,25 @@ body {
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-text h1 {
-    font-size: 54px;
+    font-size: 42px; /* Dioptimalkan agar pas di HP maupun layar monitor */
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1.2;
+    margin-bottom: 15px;
     letter-spacing: -1px;
 }
 
 .hero-text p {
     font-size: 16px;
     color: #e5c5c5;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-weight: 300;
+    max-width: 480px; /* Menjaga teks paragraf tidak terlalu melebar ke samping */
 }
 
 /* Call to Action Box */
@@ -91,8 +96,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     padding: 24px;
-    max-width: 450px;
     width: 100%;
+    max-width: 400px; /* Ukuran kotak tombol yang pas dan rapi */
 }
 
 .cta-item {
@@ -137,19 +142,19 @@ body {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-/* Efek Animasi Gambar iPhone Melayang */
+/* Efek Animasi Gambar iPhone Melayang di Bawah Teks */
 .hero-image {
-    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 450px;
-    position: relative;
+    max-width: 320px;
+    margin-top: 10px;
 }
 
 .floating-img {
     width: 100%;
-    max-width: 340px;
+    max-width: 280px; /* Ukuran iPhone yang ideal saat di posisi bawah */
     height: auto;
     filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
     animation: floatAnimation 5s ease-in-out infinite;
@@ -157,7 +162,7 @@ body {
 
 @keyframes floatAnimation {
     0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(3deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
     100% { transform: translateY(0px) rotate(0deg); }
 }
 
@@ -438,42 +443,18 @@ footer .footer-info p {
     font-size: 14px;
 }
 
-/* --- RESPONSIVE LAYOUT (MOBILE OPTIMIZATION) --- */
-@media (max-width: 968px) {
+/* --- RESPONSIVE LAYOUT (MEDIA QUERY OPTIMIZATION) --- */
+@media (max-width: 768px) {
     .hero {
         padding: 40px 0;
-        min-height: auto; /* Agar tidak menyisakan ruang kosong berlebih di HP */
-    }
-
-    .hero-container {
-        flex-direction: column; /* MEMAKSA ELEMEN MENYUSUN KE BAWAH DI HP */
-        text-align: center;
-        padding-top: 20px;
-        gap: 40px;
-        padding: 0 20px;
-    }
-    
-    .hero-text {
-        text-align: center; /* Membuat teks, badge, dan logo rata tengah di HP */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        min-height: auto; /* Mencegah ruang kosong berlebih pada HP kecil */
     }
     
     .hero-text h1 {
-        font-size: 38px;
-    }
-    
-    .cta-box {
-        margin: 0 auto;
-    }
-    
-    .hero-image {
-        margin-top: 10px;
-        width: 100%;
+        font-size: 36px; /* Mengecilkan teks judul sedikit agar pas di layar HP */
     }
     
     .floating-img {
-        max-width: 260px; /* Mengecilkan ukuran gambar iPhone agar pas layar HP */
+        max-width: 240px; /* Menyesuaikan ukuran iPhone agar pas di layar HP */
     }
 }
