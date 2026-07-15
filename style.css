@@ -20,12 +20,12 @@ body {
     padding: 0 20px;
 }
 
-/* --- 1. HERO SECTION (SUDAH DIPERBAIKI TOTAL AGAR DI TENGAH DESKTOP) --- */
+/* --- 1. HERO SECTION (ADAPTIF DESKTOP & MOBILE) --- */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center; /* Memastikan isi terpusat di tengah layar desktop */
+    justify-content: center;
     padding: 80px 0;
     position: relative;
     background: radial-gradient(circle at 50% 50%, #871313 0%, #690909 70%); /* Gradasi seimbang di tengah */
@@ -35,18 +35,17 @@ body {
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Mengumpulkan teks dan gambar tepat di tengah */
-    width: 100%;
-    max-width: 1100px; /* Batasi agar konten tidak jebol ke pinggir monitor lebar */
+    justify-content: space-between; /* Menyebarkan teks di kiri & gambar di kanan saat desktop */
+    width: 90%;
+    max-width: 1100px; /* Batasi agar konten tidak melar ke ujung monitor lebar */
     margin: 0 auto;
-    gap: 80px; /* Jarak ideal dan manis antara teks dan gambar */
-    padding: 0 40px;
+    gap: 50px; /* Jarak pas antara teks dan gambar */
     box-sizing: border-box;
 }
 
 .hero-text {
     flex: 1;
-    max-width: 480px; /* Lebar teks tertata rapi */
+    max-width: 500px; /* Lebar maksimal teks desktop */
     width: 100%;
     text-align: left;
 }
@@ -144,13 +143,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 400px;
+    max-width: 450px;
     position: relative;
 }
 
 .floating-img {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     height: auto;
     filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
     animation: floatAnimation 5s ease-in-out infinite;
@@ -189,7 +188,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     justify-content: center;
-    justify-items: center; /* Memastikan produk di baris terakhir otomatis di tengah desktop */
+    justify-items: center;
 }
 
 .product-card {
@@ -441,20 +440,28 @@ footer .footer-info p {
 
 /* --- RESPONSIVE LAYOUT (MOBILE OPTIMIZATION) --- */
 @media (max-width: 968px) {
+    .hero {
+        padding: 40px 0;
+        min-height: auto; /* Agar tidak menyisakan ruang kosong berlebih di HP */
+    }
+
     .hero-container {
-        flex-direction: column;
+        flex-direction: column; /* MEMAKSA ELEMEN MENYUSUN KE BAWAH DI HP */
         text-align: center;
-        padding-top: 40px;
-        gap: 30px;
+        padding-top: 20px;
+        gap: 40px;
         padding: 0 20px;
     }
     
     .hero-text {
-        text-align: center;
+        text-align: center; /* Membuat teks, badge, dan logo rata tengah di HP */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .hero-text h1 {
-        font-size: 40px;
+        font-size: 38px;
     }
     
     .cta-box {
@@ -462,10 +469,11 @@ footer .footer-info p {
     }
     
     .hero-image {
-        margin-top: 20px;
+        margin-top: 10px;
+        width: 100%;
     }
     
     .floating-img {
-        max-width: 240px;
+        max-width: 260px; /* Mengecilkan ukuran gambar iPhone agar pas layar HP */
     }
 }
