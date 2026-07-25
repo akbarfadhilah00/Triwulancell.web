@@ -3,32 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRIWULANCELL - Spesialis iPhone & Samsung Berkualitas</title>
+    <title>TRIWULANCELL - Spesialis iPhone & Samsung Berkualitas | ITC Fatmawati</title>
+    <meta name="description" content="TRIWULANCELL - toko HP terpercaya di ITC Fatmawati. Jual beli iPhone & Samsung baru dan second berkualitas, bergaransi toko, terima tukar tambah. Chat WhatsApp untuk cek stok.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://triwulancell.example.com/">
+    <!-- ganti URL canonical di atas dengan domain asli TRIWULANCELL saat sudah online -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TRIWULANCELL">
+    <meta property="og:title" content="TRIWULANCELL - Spesialis iPhone & Samsung Berkualitas">
+    <meta property="og:description" content="Jual beli iPhone & Samsung baru dan second berkualitas, bergaransi toko, terima tukar tambah. Chat WhatsApp untuk cek stok.">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:image" content="iphone-17-float.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TRIWULANCELL - Spesialis iPhone & Samsung Berkualitas">
+    <meta name="twitter:description" content="Jual beli iPhone & Samsung baru dan second berkualitas, bergaransi toko, terima tukar tambah.">
+    <meta name="twitter:image" content="iphone-17-float.png">
+
     <!-- Google Fonts untuk font modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome untuk ikon WhatsApp & Instagram -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD: data toko diambil dari konten asli halaman ini (alamat, jam buka, kontak) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "TRIWULANCELL",
+        "image": "iphone-17-float.png",
+        "priceRange": "$$",
+        "telephone": "+628119804789",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ITC Fatmawati lobby 2 lt. dasar no 48",
+            "addressCountry": "ID"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "11:00",
+            "closes": "21:00"
+        },
+        "sameAs": [
+            "https://www.instagram.com/officialtriwulancell",
+            "https://tk.tokopedia.com/ZSXSLdsmp/",
+            "https://id.shp.ee/8EQQs5eo"
+        ]
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
 
     <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navigasi utama">
+        <div class="scroll-progress" id="scrollProgress"></div>
         <div class="container navbar-inner">
             <a href="#beranda" class="nav-brand">
                 <img src="logo_triwulancell.png" alt="Logo Triwulancell" onerror="this.style.display='none'">
                 TRIWULANCELL
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#beranda" class="nav-link">Beranda</a></li>
+                <li><a href="#kebutuhan" class="nav-link">Kebutuhan</a></li>
                 <li><a href="#produk" class="nav-link">Produk</a></li>
                 <li><a href="#ulasan" class="nav-link">Ulasan</a></li>
                 <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
                 <li>
-                    <a href="https://wa.me/628119804789?text=Halo%20Triwulancell,%20saya%20mau%20tanya%20stok" target="_blank" class="nav-cta nav-cta-mobile">
+                    <a href="https://wa.me/628119804789?text=Halo%20Triwulancell,%20saya%20mau%20tanya%20stok" target="_blank" rel="noopener" class="nav-cta nav-cta-mobile">
                         <i class="fab fa-whatsapp"></i> Chat Kami
                     </a>
                 </li>
@@ -37,10 +88,11 @@
     </nav>
     <div class="nav-overlay" id="navOverlay"></div>
 
+    <main id="main-content">
     <!-- 1. HERO SECTION -->
     <header class="hero" id="beranda">
-        
-        <div class="container hero-container">
+        <div class="hero-container">
+            
             <!-- SISI KIRI: Teks & Tombol -->
             <div class="hero-text">
                 <img src="logo_triwulancell.png" alt="Logo Triwulancell" class="logo-toko">
@@ -51,6 +103,11 @@
                 <p>Menjual dan membeli smartphone new & second berkualitas mulai dari Apple hingga android dengan harga bersahabat.</p>
                 
                 <div class="cta-box">
+                    <!-- Gambar iPhone melayang: jadi backdrop transparan di tengah tombol -->
+                    <div class="hero-image">
+                        <img src="iphone-17-float.png" alt="iPhone Floating" class="floating-img">
+                    </div>
+
                     <div class="cta-item">
                         <p>Mau beli atau tanya stok?</p>
                         <a href="https://wa.me/628119804789?text=Halo%20Triwulancell,%20saya%20mau%20tanya%20stok%20iPhone" target="_blank" class="btn btn-wa">
@@ -72,166 +129,92 @@
                     <div class="cta-item">
                         <p>Belanja seru di Shopee?</p>
                         <a href="https://id.shp.ee/8EQQs5eo" target="_blank" class="btn btn-shopee">
-                            <img src="shopeelogo.png" alt="Shopee" class="img-icon-shopee"> Kunjungi Shopee
-                        </a>
+    <img src="shopeelogo.png" alt="Shopee" class="img-icon-shopee"> Kunjungi Shopee
+</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- SISI KANAN: Gambar iPhone Melayang -->
-            <div class="hero-image">
-                <img src="iphone-17-float.png" alt="iPhone Floating" class="floating-img">
-            </div>
+
         </div>
 
-        <!-- Teks Berjalan Keren: Keluar dari Container namun tetap di dalam Header -->
-        <div class="hero-marquee">
+        <!-- Teks Berjalan Keren: Langsung Penuh 1 Baris Sejak Awal -->
+        <div class="marquee-wrap" aria-hidden="true">
             <div class="konten-berjalan">
                 <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
                 <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
                 <span>TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; TRIWULANCELL &bull; IPHONE &bull; SAMSUNG &bull; </span>
             </div>
         </div>
-
     </header>
+
+    <!-- 1.5 REKOMENDASI HP SESUAI KEBUTUHAN/PROFESI -->
+    <section class="needs" id="kebutuhan">
+        <div class="container">
+            <h2>Bingung HP yang Cocok untuk Kebutuhanmu?</h2>
+            <p class="section-subtitle">Pilih profesi atau aktivitasmu, kami kasih rekomendasi spek &amp; tipe HP-nya</p>
+
+            <div class="needs-chips" id="needsChips">
+                <button type="button" class="chip-btn active" data-need="kreator">🎥 Konten Kreator</button>
+                <button type="button" class="chip-btn" data-need="gamer">🎮 Gamer Mobile</button>
+                <button type="button" class="chip-btn" data-need="fotografer">📸 Fotografer</button>
+                <button type="button" class="chip-btn" data-need="kantoran">💼 Karyawan Kantoran</button>
+                <button type="button" class="chip-btn" data-need="pelajar">🎓 Pelajar/Mahasiswa</button>
+                <button type="button" class="chip-btn" data-need="reseller">🛍️ Pebisnis Online</button>
+                <button type="button" class="chip-btn" data-need="trader">📈 Trader Saham/Kripto</button>
+                <button type="button" class="chip-btn" data-need="editor">🎬 Video Editor</button>
+                <button type="button" class="chip-btn" data-need="musisi">🎧 Musisi/Produser</button>
+                <button type="button" class="chip-btn" data-need="desainer">🎨 Desainer Grafis</button>
+                <button type="button" class="chip-btn" data-need="traveler">✈️ Traveler/Nomad</button>
+                <button type="button" class="chip-btn" data-need="guru">📚 Guru/Dosen</button>
+            </div>
+
+            <div class="needs-card" id="needsCard"></div>
+        </div>
+    </section>
 
     <!-- 2. PRODUCT SECTION (Dengan Background Video 50% Opacity) -->
     <section class="products" id="produk" style="position: relative; overflow: hidden; padding: 60px 0;">
         
         <!-- Video Latar Belakang iPhone -->
-        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; pointer-events: none;">
+        <video autoplay loop muted playsinline aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; pointer-events: none;">
             <source src="iphonevideo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
 
         <!-- Konten Katalog (Dibungkus Container dengan z-index tinggi agar di atas video) -->
         <div class="container" style="position: relative; z-index: 2;">
             <h2>Katalog Produk Ready</h2>
-            <p class="section-subtitle">Stok terbaru, orisinal, dan bergaransi toko</p>
+            <p class="section-subtitle">Semua varian iPhone &amp; Samsung — baru maupun second, bergaransi toko</p>
+
+            <div class="tools-row">
+                <div class="search-box">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <input type="text" id="productSearch" placeholder="Cari produk, misal: iPhone 15 Pro atau Galaxy S24..." autocomplete="off" aria-label="Cari produk">
+                    <div class="search-suggest" id="searchSuggest"></div>
+                </div>
+                <button class="wishlist-toggle-btn" id="wishlistToggleBtn" type="button">
+                    <i class="fa-solid fa-heart"></i> Wishlist (<span class="wishlist-count">0</span>)
+                </button>
+                <button class="btn-tradein" id="tradeInBtn" type="button">
+                    <i class="fas fa-arrows-rotate"></i> Cek Tukar Tambah
+                </button>
+            </div>
 
             <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn active" data-filter="all">Semua Merk</button>
                 <button class="filter-btn" data-filter="iphone">iPhone</button>
                 <button class="filter-btn" data-filter="samsung">Samsung</button>
                 <button class="filter-btn" data-filter="lainnya">Lainnya</button>
             </div>
-            
-            <div class="product-grid">
-                <!-- Produk 1 -->
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="iphone13.png" alt="iPhone 13" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone 13</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2013%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
 
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="iphone14.png" alt="iPhone 14" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone 14</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2014%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <!-- Produk 2 -->
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="iphone15.png" alt="iPhone 15" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone 15</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2015%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-new">Baru</span>
-                    <div class="prod-img-container">
-                        <img src="iphone16.png" alt="iPhone 16" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone 16</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2016%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <!-- Produk Tambahan: iPhone -->
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="iphone12.png" alt="iPhone 12" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone 12</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%2012%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <div class="product-card reveal" data-category="iphone">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="iphone-se.png" alt="iPhone SE" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPhone SE</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPhone%20SE%20second%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <!-- Produk Tambahan: Samsung -->
-                <div class="product-card reveal" data-category="samsung">
-                    <span class="tag tag-new">Baru</span>
-                    <div class="prod-img-container">
-                        <img src="samsung-s24-ultra.png" alt="Samsung Galaxy S24 Ultra" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>Samsung Galaxy S24 Ultra</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20S24%20Ultra%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <div class="product-card reveal" data-category="samsung">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="samsung-s23.png" alt="Samsung Galaxy S23" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>Samsung Galaxy S23</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20S23%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <div class="product-card reveal" data-category="samsung">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="samsung-z-flip5.png" alt="Samsung Galaxy Z Flip5" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>Samsung Galaxy Z Flip5</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20Z%20Flip5%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <div class="product-card reveal" data-category="samsung">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="samsung-a54.png" alt="Samsung Galaxy A54" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-mobile-screen-button\'></i>'}))">
-                    </div>
-                    <h3>Samsung Galaxy A54</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20Samsung%20A54%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
-
-                <!-- Produk Tambahan: Lainnya -->
-                <div class="product-card reveal" data-category="lainnya">
-                    <span class="tag tag-second">Second Mulus</span>
-                    <div class="prod-img-container">
-                        <img src="ipad-air.png" alt="iPad Air" class="prod-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-fallback',innerHTML:'<i class=\'fas fa-tablet-screen-button\'></i>'}))">
-                    </div>
-                    <h3>iPad Air</h3>
-                    <p class="price">Harga Bersahabat</p>
-                    <a href="https://wa.me/628119804789?text=Halo,%20iPad%20Air%20masih%20ready?" target="_blank" class="btn-buy">Tanya Stok</a>
-                </div>
+            <div class="condition-tabs">
+                <button class="filter-btn active" data-condition="all">Semua Kondisi</button>
+                <button class="filter-btn" data-condition="new">Baru</button>
+                <button class="filter-btn" data-condition="second">Second Mulus</button>
             </div>
+
+            <p class="search-empty" id="searchEmpty">Produk tidak ditemukan. Coba kata kunci lain atau tanya langsung ke admin ya 👋</p>
+
+            <div class="product-grid" id="productGrid" aria-live="polite"></div>
         </div>
     </section>
     
@@ -304,6 +287,8 @@
     </section>
 
     <!-- 4. FOOTER / LOKASI -->
+    </main>
+
     <footer id="lokasi">
         <div class="container footer-content">
             <div class="footer-info">
@@ -345,93 +330,91 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // --- Navbar: efek scroll & menu mobile ---
-        const navbar = document.getElementById('navbar');
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        const navOverlay = document.getElementById('navOverlay');
-        const backToTop = document.getElementById('backToTop');
+    <!-- Sticky CTA khusus mobile: WA cepat + Tukar Tambah -->
+    <div class="mobile-sticky-cta">
+        <a href="#" id="mobileCtaWa" target="_blank" rel="noopener" class="msc-wa"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
+        <button type="button" id="mobileCtaTradein" class="msc-tradein"><i class="fas fa-arrows-rotate"></i> Tukar Tambah</button>
+    </div>
 
-        function closeMobileNav() {
-            navToggle.classList.remove('open');
-            navLinks.classList.remove('open');
-            navOverlay.classList.remove('open');
-        }
+    <!-- Bar Bandingkan Produk (muncul saat pengguna memilih produk untuk dibandingkan) -->
+    <div class="compare-bar" id="compareBar">
+        <div class="compare-bar-items" id="compareBarItems"></div>
+        <button type="button" class="compare-bar-btn" id="compareBarBtn" disabled>Bandingkan (0/3)</button>
+    </div>
 
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('open');
-            navLinks.classList.toggle('open');
-            navOverlay.classList.toggle('open');
-        });
+    <!-- FAB Speed-Dial: kumpulan kontak cepat, muncul mengambang di semua halaman -->
+    <div class="fab-wrap" id="fabWrap">
+        <div class="fab-menu" id="fabMenu"></div>
+        <button class="fab-main" id="fabMain" aria-label="Buka menu kontak cepat">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
 
-        navOverlay.addEventListener('click', closeMobileNav);
-        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
+    <!-- Modal: Quick View Produk -->
+    <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+        <div class="modal-box modal-quickview">
+            <button class="modal-close" data-close-modal aria-label="Tutup"><i class="fas fa-xmark"></i></button>
+            <div class="qv-image" id="qvImage"></div>
+            <div class="qv-info">
+                <span class="qv-tag" id="qvTag"></span>
+                <h3 id="qvTitle"></h3>
+                <p class="qv-price" id="qvPrice"></p>
+                <ul class="qv-specs" id="qvSpecs"></ul>
+                <p class="qv-note">Kondisi, kelengkapan &amp; garansi bisa ditanyakan langsung ke admin sebelum transaksi.</p>
+                <a href="#" target="_blank" class="btn btn-wa" id="qvWaBtn"><i class="fab fa-whatsapp"></i> Tanya Stok via WhatsApp</a>
+            </div>
+        </div>
+    </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            backToTop.classList.toggle('show', window.scrollY > 500);
-        });
+    <!-- Modal: Bandingkan Produk -->
+    <div class="modal-overlay" id="compareModal" role="dialog" aria-modal="true" aria-labelledby="compareModalTitle">
+        <div class="modal-box modal-compare">
+            <button class="modal-close" data-close-modal aria-label="Tutup"><i class="fas fa-xmark"></i></button>
+            <h3 class="modal-title" id="compareModalTitle">Bandingkan Produk</h3>
+            <div class="compare-grid" id="compareGrid"></div>
+        </div>
+    </div>
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    <!-- Modal: Wizard Tukar Tambah -->
+    <div class="modal-overlay" id="tradeInModal" role="dialog" aria-modal="true" aria-labelledby="tradeInModalTitle">
+        <div class="modal-box modal-tradein">
+            <button class="modal-close" data-close-modal aria-label="Tutup"><i class="fas fa-xmark"></i></button>
+            <h3 class="modal-title" id="tradeInModalTitle">Cek Tukar Tambah</h3>
+            <div class="tradein-steps" id="tradeSteps">
+                <span class="step-dot active" data-step="1"></span>
+                <span class="step-dot" data-step="2"></span>
+                <span class="step-dot" data-step="3"></span>
+            </div>
 
-        // --- Highlight menu aktif sesuai posisi scroll ---
-        const sections = ['beranda', 'produk', 'ulasan', 'lokasi']
-            .map(id => document.getElementById(id))
-            .filter(Boolean);
-        const navAnchors = document.querySelectorAll('.nav-link');
+            <div class="tradein-panel" data-panel="1">
+                <p class="tradein-label">1. HP kamu sekarang tipe apa?</p>
+                <div class="tradein-options" id="tiBrandOptions">
+                    <button type="button" data-value="iPhone">iPhone</button>
+                    <button type="button" data-value="Samsung">Samsung</button>
+                    <button type="button" data-value="Merk Lainnya">Merk Lainnya</button>
+                </div>
+            </div>
 
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navAnchors.forEach(a => a.classList.remove('active'));
-                    const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-                    if (active) active.classList.add('active');
-                }
-            });
-        }, { rootMargin: '-40% 0px -55% 0px' });
+            <div class="tradein-panel" data-panel="2">
+                <p class="tradein-label">2. Kira-kira kondisinya gimana?</p>
+                <div class="tradein-options" id="tiConditionOptions">
+                    <button type="button" data-value="Mulus, no minus">Mulus, no minus</button>
+                    <button type="button" data-value="Normal pemakaian">Normal pemakaian</button>
+                    <button type="button" data-value="Ada kendala (layar/baterai/dll)">Ada kendala (layar/baterai/dll)</button>
+                </div>
+                <button type="button" class="tradein-back" data-back>&larr; Kembali</button>
+            </div>
 
-        sections.forEach(sec => sectionObserver.observe(sec));
+            <div class="tradein-panel" data-panel="3">
+                <p class="tradein-label">Ringkasan tukar tambahmu:</p>
+                <div class="tradein-summary" id="tiSummary"></div>
+                <a href="#" target="_blank" class="btn btn-wa" id="tiSendBtn"><i class="fab fa-whatsapp"></i> Kirim ke Admin via WhatsApp</a>
+                <button type="button" class="tradein-back" data-back>&larr; Ubah jawaban</button>
+            </div>
+        </div>
+    </div>
 
-        // --- Reveal animasi saat scroll ---
-        const revealItems = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        revealItems.forEach(item => revealObserver.observe(item));
-
-        // --- Filter produk (Semua / iPhone / Samsung / Lainnya) ---
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.product-card');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-
-                productCards.forEach(card => {
-                    const match = filter === 'all' || card.dataset.category === filter;
-                    card.classList.toggle('hidden-item', !match);
-                    if (match) {
-                        card.classList.add('reveal', 'in-view');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="app.js" defer></script>
 
 </body>
 </html>

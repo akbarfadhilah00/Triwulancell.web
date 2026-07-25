@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #690909; 
+    background-color: #690909; /* Warna merah marun premium sesuai request */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -19,41 +19,32 @@ body {
     margin: 0 auto;
 }
 
-/* --- 1. HERO SECTION (PERBAIKAN TOTAL LAYOUT & MARQUEE) --- */
+/* --- 1. HERO SECTION --- */
 .hero {
     min-height: 100vh;
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between; /* Memaksa marquee tetap di dasar hero section */
-    padding: 100px 0 0 0; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
     position: relative;
     background: radial-gradient(circle at 80% 20%, #871313 0%, #690909 60%);
-    overflow: hidden; 
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
     gap: 50px;
-    flex: 1; 
-}
-
-.logo-toko {
-    width: 140px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
+    position: relative;
 }
 
 .hero-text {
     flex: 1;
     max-width: 600px;
-    min-width: 0; 
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
@@ -84,16 +75,60 @@ body {
     font-weight: 300;
 }
 
+/* Logo toko di hero (ukuran default utk semua layar, bukan cuma mobile) */
+.logo-toko {
+    max-width: 84px;
+    height: auto;
+    display: block;
+    margin-bottom: 18px;
+}
+
+/* Teks berjalan sekarang full-width di luar flex row hero-container */
+.marquee-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 14px 0;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 10px;
+}
+
+@keyframes jalanTerus {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-33.33%, 0, 0); }
+}
+
+.konten-berjalan {
+    display: flex;
+    white-space: nowrap;
+    animation: jalanTerus 25s linear infinite;
+}
+
+.konten-berjalan span {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-right: 10px;
+}
+
+/* Call to Action Box */
 .cta-box {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     padding: 24px;
     max-width: 450px;
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-item {
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .cta-item:last-child {
@@ -107,6 +142,7 @@ body {
     font-weight: 500;
 }
 
+/* Global Buttons Style */
 .btn {
     display: flex;
     align-items: center;
@@ -126,69 +162,108 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.btn-wa { background-color: #25D366; }
-.btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.btn-tokopedia { background-color: #03AC0E; }
-.btn-tokopedia:hover { background-color: #028a0b; box-shadow: 0 8px 20px rgba(3, 172, 14, 0.4); }
-.img-icon-tokopedia { width: 20px; height: 20px; object-fit: contain; display: inline-block; vertical-align: middle; }
-.btn-shopee { background-color: #EE4D2D; }
-.btn-shopee:hover { background-color: #d63b1d; box-shadow: 0 8px 20px rgba(238, 77, 45, 0.4); }
-.img-icon-shopee { width: 20px; height: 20px; object-fit: contain; display: inline-block; vertical-align: middle; }
+.btn-wa {
+    background-color: #25D366;
+}
 
+.btn-ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Tombol Tokopedia */
+.btn-tokopedia {
+    background-color: #03AC0E; /* Hijau khas Tokopedia */
+}
+
+.btn-tokopedia:hover {
+    background-color: #028a0b; 
+    box-shadow: 0 8px 20px rgba(3, 172, 14, 0.4); 
+}
+
+/* --- LOGO TOKOPEDIA (Menggunakan File Gambar Tokopedialogo.png) --- */
+.img-icon-tokopedia {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;  /* Mencegah gambar gepeng/terdistorsi */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Tombol Shopee */
+.btn-shopee {
+    background-color: #EE4D2D; /* Oranye khas Shopee */
+}
+
+.btn-shopee:hover {
+    background-color: #d63b1d; 
+    box-shadow: 0 8px 20px rgba(238, 77, 45, 0.4); 
+}
+
+/* --- LOGO SHOPEE (Menggunakan File Gambar shopeelogo.png) --- */
+.img-icon-shopee {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;  /* Mencegah gambar logo gepeng/terdistorsi */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Gagang Tas Belanja */
+.icon-shopee::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 4px;
+    width: 6px;
+    height: 4px;
+    border: 2px solid #fff;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+}
+/* Huruf S di Tengah */
+.icon-shopee::after {
+    content: 'S';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EE4D2D;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Gambar iPhone melayang: sekarang jadi backdrop transparan di belakang tombol CTA */
 .hero-image {
-    flex: 1;
+    position: absolute;
+    inset: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
-    position: relative;
-    flex-shrink: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.25s ease-out;
 }
 
 .floating-img {
-    width: 100%;
-    max-width: 320px;
+    max-width: 85%;
     height: auto;
     filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
     animation: floatAnimation 5s ease-in-out infinite;
 }
 
 @keyframes floatAnimation {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(3deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* --- FIXED HERO MARQUEE --- */
-.hero-marquee {
-    width: 100%; 
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.3); 
-    padding: 16px 0;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    margin-top: 40px; 
-}
-
-.konten-berjalan {
-    display: flex;
-    white-space: nowrap;
-    animation: jalanTerus 25s linear infinite;
-    will-change: transform; 
-}
-
-.konten-berjalan span {
-    display: inline-block; 
-    font-size: 16px; 
-    font-weight: 800; 
-    color: #ffffff; 
-    letter-spacing: 2px; 
-    text-transform: uppercase;
-    padding-right: 60px; 
-}
-
-@keyframes jalanTerus {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-50%, 0, 0); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 /* --- 2. PRODUCT SECTION --- */
@@ -247,7 +322,49 @@ body {
 .tag-second { background-color: #e1f5fe; color: #0288d1; }
 .tag-new { background-color: #e8f5e9; color: #388e3c; }
 
-/* --- 3. TESTIMONI SECTION --- */
+.prod-img-placeholder {
+    background-color: #eef0f2;
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #b5bfc9;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 16px;
+    color: #690909;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    display: block;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #690909;
+}
+
+/* --- 3. TESTIMONI SECTION (Ala Google Maps) --- */
 .reviews {
     background-color: #f4f5f6;
     color: #1a1a1a;
@@ -319,6 +436,116 @@ body {
     border: 1px dashed #cbd5e1;
 }
 
+/* --- 4. FOOTER / LOKASI --- */
+footer {
+    background-color: #1a0202;
+    padding: 60px 0;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-info {
+    max-width: 500px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.footer-info p {
+    color: #c5a9a9;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-info i {
+    color: #ffb4b4;
+}
+
+.footer-copy {
+    align-self: flex-end;
+    color: #8c7373;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE LAYOUT (MOBILE OPTIMIZATION) --- */
+@media (max-width: 968px) {
+    .hero {
+        padding: 40px 0;
+        min-height: auto; /* Mencegah space kosong terlalu tinggi di HP */
+    }
+
+    .hero-container {
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-text {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Menyejajarkan semua elemen teks & tombol ke tengah */
+    }
+
+    .logo-toko {
+        max-width: 120px;
+        margin: 0 auto 15px auto;
+    }
+
+    .badge {
+        margin-bottom: 16px;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px; /* Ukuran font judul disesuaikan agar tidak terlalu besar di HP */
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+        margin-bottom: 30px;
+        padding: 0 10px; /* Memberi sedikit jarak di kiri-kanan teks agar tidak mepet layar */
+    }
+    
+    /* Box CTA agar melebar penuh secara proporsional di HP */
+    .cta-box {
+        width: 100%;
+        max-width: 100%; 
+        padding: 20px 15px;
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-item p {
+        text-align: center;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-copy {
+        align-self: center;
+        margin-top: 20px;
+    }
+}
+
+/* Menjinakkan ukuran foto bukti pembeli */
 .review-photo {
     margin-top: 15px;
     width: 100%;
@@ -331,17 +558,10 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
-    max-height: 250px; 
+    max-height: 250px; /* Membatasi tinggi foto agar tidak kepanjangan */
 }
 
-/* --- 4. FOOTER & MAPS --- */
-footer {
-    background-color: #1a0202;
-    padding: 60px 0;
-    color: #ffffff;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
+/* Merapikan susunan footer dan peta lokasi */
 footer .footer-content {
     display: flex;
     flex-direction: column;
@@ -352,48 +572,49 @@ footer .footer-content {
 
 footer .footer-info {
     width: 100%;
-    max-width: 500px;
+    max-width: 500px; /* Membatasi lebar teks di HP */
     margin: 0 auto;
 }
 
-footer .footer-info h3 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-footer .footer-info p {
-    color: #c5a9a9;
-    margin-bottom: 12px;
+.map-container {
+    width: 100%;
+    max-width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
+    margin: 20px auto 0 auto;
 }
 
+.map-container iframe {
+    width: 100% !important;
+    border-radius: 8px;
+}
+
+/* Desain Kotak Alamat yang Lebih Bagus */
 .address-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Latar belakang transparan tipis */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi halus */
     padding: 15px;
     border-radius: 12px;
     margin: 20px auto;
     max-width: 450px;
-    text-align: left;
+    text-align: left; /* Teks alamat rata kiri */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .address-icon {
     font-size: 24px;
-    color: #ff3b30;
+    color: #ff3b30; /* Warna merah khas Apple/Samsung premium */
     margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 59, 48, 0.1);
+    background: rgba(255, 59, 48, 0.1); /* Lingkaran merah transparan di belakang ikon */
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Mencegah ikon gepeng di layar HP */
 }
 
 .address-text {
@@ -413,26 +634,9 @@ footer .footer-info p {
     color: #cccccc;
 }
 
-.map-container {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px auto 0 auto;
-}
-
-.map-container iframe {
-    width: 100% !important;
-    border-radius: 8px;
-}
-
-.footer-copy {
-    margin-top: 20px;
-    color: #8c7373;
-    font-size: 14px;
-}
-
+/* ============================================= */
 /* --- 5. NAVBAR (STICKY) --- */
+/* ============================================= */
 html {
     scroll-behavior: smooth;
 }
@@ -559,9 +763,15 @@ section, header, footer {
     transition: all 0.3s ease;
 }
 
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 @media (max-width: 860px) {
     .nav-toggle {
@@ -615,7 +825,9 @@ section, header, footer {
     display: block;
 }
 
+/* ============================================= */
 /* --- 6. FILTER PRODUK (TABS) --- */
+/* ============================================= */
 .filter-tabs {
     display: flex;
     justify-content: center;
@@ -651,7 +863,9 @@ section, header, footer {
     display: none;
 }
 
+/* ============================================= */
 /* --- 7. GAMBAR PRODUK & FALLBACK --- */
+/* ============================================= */
 .prod-img-container {
     background-color: #eef0f2;
     height: 220px;
@@ -685,7 +899,9 @@ section, header, footer {
     background: linear-gradient(145deg, #eef0f2, #e2e5e9);
 }
 
+/* ============================================= */
 /* --- 8. SCROLL REVEAL ANIMATION --- */
+/* ============================================= */
 .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -697,7 +913,9 @@ section, header, footer {
     transform: translateY(0);
 }
 
+/* ============================================= */
 /* --- 9. TOMBOL KEMBALI KE ATAS --- */
+/* ============================================= */
 .back-to-top {
     position: fixed;
     right: 22px;
@@ -732,75 +950,6 @@ section, header, footer {
     transform: translateY(-3px);
 }
 
-/* --- RESPONSIVE LAYOUT (MOBILE OPTIMIZATION) --- */
-@media (max-width: 968px) {
-    .hero {
-        padding: 80px 0 0 0;
-        min-height: auto; 
-    }
-
-    .hero-container {
-        flex-direction: column-reverse; 
-        text-align: center;
-        gap: 35px;
-    }
-    
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
-
-    .logo-toko {
-        max-width: 120px;
-        margin: 0 auto 15px auto;
-    }
-    
-    .hero-text h1 {
-        font-size: 32px; 
-        line-height: 1.2;
-    }
-
-    .hero-text p {
-        font-size: 14px;
-        margin-bottom: 25px;
-        padding: 0 10px; 
-    }
-    
-    .cta-box {
-        width: 100%;
-        max-width: 100%; 
-        padding: 20px 15px;
-    }
-    
-    .floating-img {
-        max-width: 180px; 
-    }
-
-    .hero-marquee {
-        margin-top: 30px;
-        padding: 12px 0;
-    }
-
-    .konten-berjalan span {
-        font-size: 14px;
-        padding-right: 40px;
-    }
-    
-    footer .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .footer-copy {
-        align-self: center;
-        margin-top: 20px;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -809,4 +958,1135 @@ section, header, footer {
         transition: none !important;
         animation: none !important;
     }
+}
+
+/* ============================================= */
+/* --- 10. SCROLL PROGRESS BAR --- */
+/* ============================================= */
+.scroll-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #ff3b30, #ffb4b4);
+    z-index: 1200;
+    transition: width 0.1s ease-out;
+}
+
+/* ============================================= */
+/* --- 11. CURSOR GLOW (DESKTOP ONLY) --- */
+/* ============================================= */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    margin-left: -13px;
+    margin-top: -13px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.55), transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.08s linear, width 0.25s ease, height 0.25s ease, margin 0.25s ease, opacity 0.25s ease;
+    mix-blend-mode: screen;
+}
+
+.cursor-glow.grow {
+    width: 56px;
+    height: 56px;
+    margin-left: -28px;
+    margin-top: -28px;
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.35), transparent 70%);
+}
+
+/* ============================================= */
+/* --- 12. HERO 3D TILT --- */
+/* ============================================= */
+.hero-container {
+    perspective: 1200px;
+}
+
+.hero-image {
+    transition: transform 0.25s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* ============================================= */
+/* --- 13. PRODUCT CARD: TILT + SHINE + COMPARE --- */
+/* ============================================= */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.product-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(255,255,255,0.55), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.product-card:hover::after {
+    opacity: 1;
+}
+
+.prod-img-container {
+    cursor: zoom-in;
+}
+
+.compare-check {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #e2e5e9;
+    padding: 5px 10px 5px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    z-index: 3;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.compare-check:hover {
+    border-color: #690909;
+    color: #690909;
+}
+
+.compare-check input {
+    accent-color: #690909;
+    cursor: pointer;
+}
+
+/* ============================================= */
+/* --- 14. TOOLS ROW: SEARCH + TUKAR TAMBAH --- */
+/* ============================================= */
+.tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f4f5f6;
+    border: 1px solid #e2e5e9;
+    border-radius: 30px;
+    padding: 12px 20px;
+    flex: 1 1 320px;
+    max-width: 420px;
+    color: #888;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: #690909;
+    box-shadow: 0 0 0 3px rgba(105, 9, 9, 0.08);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    color: #1a1a1a;
+}
+
+.btn-tradein {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-tradein:hover {
+    background: #690909;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(105, 9, 9, 0.3);
+}
+
+.search-empty {
+    display: none;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin: -10px 0 30px 0;
+}
+
+.search-empty.show {
+    display: block;
+}
+
+/* ============================================= */
+/* --- 15. FAB SPEED-DIAL --- */
+/* ============================================= */
+.fab-wrap {
+    position: fixed;
+    right: 22px;
+    bottom: 84px;
+    z-index: 950;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.fab-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.9);
+    transition: all 0.25s ease;
+}
+
+.fab-wrap.open .fab-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.fab-item {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 19px;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.fab-item:hover {
+    transform: scale(1.12);
+}
+
+.fab-wa { background: #25D366; }
+.fab-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.fab-tokopedia { background: #03AC0E; }
+.fab-shopee { background: #EE4D2D; }
+
+.fab-main {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #690909;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.fab-main:hover {
+    background: #871313;
+}
+
+.fab-wrap.open .fab-main {
+    transform: rotate(135deg);
+}
+
+/* ============================================= */
+/* --- 16. COMPARE BAR --- */
+/* ============================================= */
+.compare-bar {
+    position: fixed;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%);
+    width: min(92%, 520px);
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    z-index: 940;
+    transition: bottom 0.35s ease;
+}
+
+.compare-bar.show {
+    bottom: 22px;
+}
+
+.compare-bar-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #d8d8d8;
+}
+
+.compare-bar-items span {
+    background: rgba(255,255,255,0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.compare-bar-btn {
+    background: #690909;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.compare-bar-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.compare-bar-btn:not(:disabled):hover {
+    background: #871313;
+}
+
+/* ============================================= */
+/* --- 17. MODALS (QUICK VIEW / COMPARE / TUKAR TAMBAH) --- */
+/* ============================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-radius: 18px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 32px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay.open .modal-box {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f1f3;
+    color: #444;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #690909;
+    color: #fff;
+}
+
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+/* Quick View */
+.qv-image {
+    background: #eef0f2;
+    border-radius: 14px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.qv-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qv-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #e8f5e9;
+    color: #388e3c;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.qv-info h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.qv-price {
+    color: #690909;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.qv-note {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.qv-info .btn-wa {
+    max-width: 100%;
+}
+
+/* Compare */
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.compare-col {
+    border: 1px solid #eaeaea;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+}
+
+.compare-col .compare-img {
+    background: #eef0f2;
+    height: 140px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.compare-col .compare-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.compare-col h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.compare-col .btn-wa {
+    margin-top: 12px;
+    font-size: 13px;
+    padding: 10px;
+}
+
+/* Trade-in Wizard */
+.tradein-steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.step-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #e2e5e9;
+    transition: all 0.2s ease;
+}
+
+.step-dot.active {
+    background: #690909;
+    width: 22px;
+    border-radius: 5px;
+}
+
+.tradein-panel {
+    display: none;
+}
+
+.tradein-panel.active {
+    display: block;
+    animation: fadeInPanel 0.3s ease;
+}
+
+@keyframes fadeInPanel {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.tradein-label {
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.tradein-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tradein-options button {
+    background: #f4f5f6;
+    border: 1px solid #e2e5e9;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.tradein-options button:hover {
+    border-color: #690909;
+    color: #690909;
+}
+
+.tradein-options button.selected {
+    background: #690909;
+    color: #fff;
+    border-color: #690909;
+}
+
+.tradein-back {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 8px;
+    display: block;
+}
+
+.tradein-back:hover {
+    color: #690909;
+}
+
+.tradein-summary {
+    background: #f4f5f6;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ============================================= */
+/* --- 18. TESTIMONIAL SLIDER --- */
+/* ============================================= */
+.review-grid.slider-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.review-grid.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.review-grid.slider-track .review-card {
+    flex: 0 0 min(340px, 82vw);
+    scroll-snap-align: start;
+}
+
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.slider-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.slider-arrow:hover {
+    background: #690909;
+    color: #fff;
+    border-color: #690909;
+}
+
+.slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.slider-dot.active {
+    background: #690909;
+    width: 22px;
+    border-radius: 5px;
+}
+
+@media (max-width: 640px) {
+    .modal-box {
+        padding: 24px 18px;
+    }
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+    .fab-wrap {
+        right: 16px;
+        bottom: 78px;
+    }
+}
+
+/* ============================================= */
+/* --- 19. REKOMENDASI HP SESUAI KEBUTUHAN/PROFESI --- */
+/* ============================================= */
+.needs {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 90px 0;
+    border-top: 1px solid #eaeaea;
+}
+
+.needs-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+.chip-btn {
+    background: #f4f5f6;
+    border: 1px solid #e2e5e9;
+    color: #444;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.chip-btn:hover {
+    border-color: #690909;
+    color: #690909;
+}
+
+.chip-btn.active {
+    background: #690909;
+    border-color: #690909;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(105, 9, 9, 0.25);
+}
+
+.needs-card {
+    background: #f8f9fa;
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
+    padding: 36px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInPanel 0.35s ease;
+}
+
+.needs-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.needs-desc {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.needs-specs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+
+.spec-chip {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.needs-devices-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.needs-devices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+
+.device-chip {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.device-chip:hover {
+    background: #690909;
+    transform: translateY(-2px);
+}
+
+.needs-card .btn-wa {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    .needs-card {
+        padding: 26px 20px;
+    }
+}
+
+/* =========================================================================
+   REFACTOR PREMIUM — lapisan baru di atas fondasi yang sudah ada
+   ========================================================================= */
+
+/* ---------- Design tokens (biar konsisten & gampang diubah) ---------- */
+:root {
+    --tw-maroon: #690909;
+    --tw-maroon-light: #871313;
+    --tw-accent: #ff3b30;
+    --tw-radius-lg: 20px;
+    --tw-radius-md: 14px;
+    --tw-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Skip link (aksesibilitas) ---------- */
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    z-index: 2000;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 12px;
+}
+
+/* ---------- Focus states (aksesibilitas) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ffb4b4;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ---------- Hero: aurora + mesh gradient + noise texture ---------- */
+.hero {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 59, 48, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 10%, rgba(255, 140, 90, 0.18), transparent 40%),
+        radial-gradient(circle at 75% 85%, rgba(120, 10, 40, 0.35), transparent 50%),
+        radial-gradient(circle at 80% 20%, #871313 0%, #690909 60%);
+    overflow: hidden;
+}
+
+.hero::before {
+    /* noise texture halus */
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
+.hero::after {
+    /* aurora yang perlahan bergerak */
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, rgba(255, 90, 60, 0.12) 90deg, transparent 180deg, rgba(255, 180, 150, 0.1) 270deg, transparent 360deg);
+    animation: auroraSpin 22s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes auroraSpin {
+    to { transform: rotate(360deg); }
+}
+
+.badge {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Glass morphism pada CTA box */
+.cta-box {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Navbar: sembunyi saat scroll ke bawah ---------- */
+.navbar {
+    transition: transform 0.35s var(--tw-ease), background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* ---------- Tools row: tombol wishlist + kondisi ---------- */
+.tools-row {
+    align-items: stretch;
+}
+
+.wishlist-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f4f5f6;
+    border: 1px solid #e2e5e9;
+    color: #444;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.wishlist-toggle-btn i { color: #cbd0d6; transition: color 0.2s ease; }
+.wishlist-toggle-btn.has-items i { color: #e0455f; }
+.wishlist-toggle-btn.active {
+    background: #690909;
+    border-color: #690909;
+    color: #fff;
+}
+.wishlist-toggle-btn.active i { color: #fff; }
+.wishlist-toggle-btn:hover { border-color: #690909; }
+
+.condition-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+/* ---------- Wishlist heart di kartu produk ---------- */
+.wishlist-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #e2e5e9;
+    color: #b5384a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+.wishlist-btn:hover { transform: scale(1.1); }
+.wishlist-btn.active { background: #690909; color: #fff; border-color: #690909; }
+
+/* Geser posisi checkbox "Bandingkan" karena hati sudah pakai pojok kanan atas */
+.compare-check {
+    top: 58px;
+}
+
+/* ---------- Search: autocomplete dropdown ---------- */
+.search-box { position: relative; }
+
+.search-suggest {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e5e9;
+    border-radius: 14px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+    padding: 8px;
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: all 0.18s ease;
+    max-height: 320px;
+    overflow-y: auto;
+    text-align: left;
+}
+.search-suggest.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.search-suggest-heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999;
+    padding: 8px 10px 4px;
+}
+.search-suggest-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.search-suggest-item:hover { background: #f4f5f6; }
+.search-suggest-item i { color: #999; width: 16px; }
+.search-suggest-item mark {
+    background: #ffe3a3;
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 1px;
+}
+
+/* ---------- Quick View: daftar spesifikasi ---------- */
+.qv-specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #444;
+}
+.qv-specs li { display: flex; align-items: center; gap: 10px; }
+.qv-specs i { color: #690909; width: 16px; text-align: center; }
+
+/* ---------- Compare: dukung 2 atau 3 kolom ---------- */
+.compare-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.compare-specs {
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0;
+}
+.compare-specs li { display: flex; align-items: flex-start; gap: 8px; }
+.compare-specs i { color: #690909; width: 14px; margin-top: 2px; }
+
+@media (max-width: 720px) {
+    .compare-grid.cols-3 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Toast kecil ---------- */
+.tw-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%) translateY(20px);
+    background: #1a1a1a;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 2000;
+    max-width: 90%;
+    text-align: center;
+}
+.tw-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- Sticky CTA khusus mobile ---------- */
+.mobile-sticky-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .fab-wrap { display: none; }
+
+    .mobile-sticky-cta {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 960;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid #e5e7eb;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        gap: 10px;
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-sticky-cta a,
+    .mobile-sticky-cta button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mobile-sticky-cta .msc-wa { background: #25D366; color: #fff; }
+    .mobile-sticky-cta .msc-tradein { background: #1a1a1a; color: #fff; }
+
+    .back-to-top { bottom: 92px; }
+    .compare-bar { bottom: 90px; }
+    .compare-bar.show { bottom: 90px; }
+    .tw-toast { bottom: 110px; }
+}
+
+/* ---------- Reduce motion: matikan aurora & efek berat ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero::after { animation: none; }
 }
